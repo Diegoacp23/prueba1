@@ -1,27 +1,24 @@
 <?php
-// Crear conexión
-$conn = new mysqli("localhost", "root", "", "ficha_tecnica");
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "ficha_tecnica";
 
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar conexión
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
 
-if (isset($_POST['usuario'])) {
-    $usuario = $_POST['usuario'];
+$id = $_GET['id'];
+$sql = "DELETE FROM telecomunicaciones WHERE id='$id'";
 
-    // Usar una declaración preparada para evitar inyecciones SQL
-    $stmt = $conn->prepare("DELETE FROM ficha WHERE usuario = $id");
-    $stmt->bind_param("s", $usuario);
-
-    if ($stmt->execute() === TRUE) {
-        echo "Registro eliminado correctamente";
-    } else {
-        echo "Error eliminando el registro: " . $stmt->error;
-    }
-
-    $stmt->close();
+if ($conn->query($sql) === TRUE) {
+    echo "Registro eliminado con éxito";
 } else {
-    echo "El nombre de usuario no está definido.";
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();
