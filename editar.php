@@ -1,26 +1,29 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usuario = $_POST['usuario'];
-    $nuevoValor = $_POST['nuevoValor'];
+    // Conectar a la base de datos
+    $conn = new mysqli('localhost', 'root', '', 'ficha_tecnica');
 
-    // Conexión a la base de datos
-    $conn = new mysqli('localhost', 'usuario', 'contraseña', 'base_de_datos');
-
+    // Verificar la conexión
     if ($conn->connect_error) {
         die("Conexión fallida: " . $conn->connect_error);
     }
 
-    // Actualizar el valor en la base de datos
-    $sql = "UPDATE usuarios SET valor_columna = '$nuevoValor' WHERE usuario = '$usuario'";
+    // Obtener los datos del formulario
+    $id = $_POST['id'];
+    $fecha = $_POST['Fecha'];
+    $GT = $_POST['GT'];
+    // Obtén los demás campos del formulario
+
+    // Actualizar los datos en la base de datos
+    $sql = "UPDATE telecomunicaciones SET Fecha='$fecha' WHERE id='$id'";
+    // Agrega los demás campos a la consulta SQL
 
     if ($conn->query($sql) === TRUE) {
-        echo json_encode(['success' => true]);
+        echo "Registro actualizado correctamente";
     } else {
-        echo json_encode(['success' => false, 'message' => $conn->error]);
+        echo "Error actualizando el registro: " . $conn->error;
     }
 
     $conn->close();
-} else {
-    echo json_encode(['success' => false, 'message' => 'Método no permitido']);
 }
 ?>
