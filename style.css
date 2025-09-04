@@ -22,7 +22,7 @@ body.background-image {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-top: 80px; /* Aquí agregué la regla para el espacio del header */
+    padding-top: 0px; /* Agregamos un padding-top para compensar el header fijo */
 }
 
 body.background-image::before {
@@ -240,7 +240,7 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 0; /* Esta propiedad asegura que se pegue al borde superior */
     z-index: 1000;
 }
 
@@ -333,18 +333,16 @@ footer {
 
 /* --- Media Queries para hacerlo Responsive (Optimizado) --- */
 @media (max-width: 991px) {
-    header {
-        position: relative; /* Evita que el header se superponga al contenido */
-    }
-
+    /* No hay reglas especiales para el header aquí, ya que queremos que sea fijo */
     body {
-        padding-top: 0;
+        padding-top: 80px; /* Mantener el padding en móviles */
     }
 }
 
 @media (max-width: 768px) {
     body {
         padding: 20px;
+        padding-top: 80px; /* Aseguramos que el padding superior sea constante */
     }
 
     .card {
