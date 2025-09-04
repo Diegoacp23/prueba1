@@ -11,6 +11,57 @@
 </head>
 <body class="background-image">
 
+    <header class="shadow-sm py-3 mb-5">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="d-flex align-items-center">
+                <img src="images.jpeg" alt="Logo Norte" style="height: 40px;">
+                <span class="fs-4 fw-bold ms-2" style="color: #8bb1e9;">TecniCable</span>
+            </a>
+            <nav class="d-none d-md-flex align-items-center">
+                <ul class="nav">
+                    <li class="nav-item"><a href="#" class="nav-link text-primary">Inicio</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary">Servicios</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary" href="#" id="infoPagosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Info pagos</a>
+                        <ul class="dropdown-menu" aria-labelledby="infoPagosDropdown">
+                            <li><a class="dropdown-item" href="#">Bancos</a></li>
+                            <li><a class="dropdown-item" href="#">Métodos de Pago</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-primary" href="#" id="nosotrosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+                        <ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
+                            <li><a class="dropdown-item" href="#">Misión y Visión</a></li>
+                            <li><a class="dropdown-item" href="#">Contacto</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary">¡Entérate!</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link text-primary">Contáctanos</a></li>
+                </ul>
+                <button class="btn btn-primary ms-3 d-flex align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill me-2" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                    </svg>
+                    Cliente
+                </button>
+            </nav>
+            <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse d-md-none" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Info pagos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">¡Entérate!</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Cliente Norte</a></li>
+            </ul>
+        </div>
+    </header>
+
     <main class="container py-5 d-flex justify-content-center">
         <div class="card p-4 shadow-lg w-100" style="max-width: 900px;">
             
@@ -19,7 +70,7 @@
                 <p>Haz clic para iniciar la consulta de tu estado de cuenta.</p>
                 <button id="show-form-btn" class="btn btn-primary btn-lg">Consultar Usuario</button>
             </div>
-            <br>
+
             <div id="content-container" class="hidden">
                 <h2 class="text-center mb-4">Consultar Estado de Cuenta</h2>
                 <div class="input-group mb-3">
@@ -139,6 +190,11 @@
             </div>
         </div>
     </main>
+
+    <footer>
+        <p class="mb-0">© 2025 TecniCable. Todos los derechos reservados.</p>
+        <p class="mb-0">Contacto: <a href="mailto:info@tecnicable.com" class="text-white">info@tecnicable.com</a></p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
