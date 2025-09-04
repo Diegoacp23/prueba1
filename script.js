@@ -118,4 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
             paymentTabsSection.classList.add('hidden');
         }
     });
+
+    // Código para mostrar el modal automáticamente al cargar la página
+    var myModal = new bootstrap.Modal(document.getElementById('promotionModal'));
+    myModal.show();
 });
