@@ -272,9 +272,10 @@ header {
 
 /* Estilo para el botón de hamburguesa para que se vea en el fondo oscuro */
 .navbar-toggler {
+    
     border: none;
     padding: 0;
-    filter: invert(1);
+    filter: invert(0);
 }
 
 /* Estilo para el menú colapsado */
@@ -284,7 +285,7 @@ header {
     border-radius: 1rem;
     padding: 1rem;
     margin-top: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(88, 65, 189, 0.1);
 }
 
 footer {
