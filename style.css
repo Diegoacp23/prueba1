@@ -1,16 +1,16 @@
 /* Paleta de colores para una empresa de fibra óptica: azules, grises y acentos luminosos */
 :root {
-    --primary-blue: #007bff; /* Azul vibrante para botones principales */
-    --dark-blue: #004d99;   /* Azul oscuro para texto y detalles */
-    --white-transparent: rgba(255, 255, 255, 0.15); /* Para elementos semi-transparentes */
-    --white-opaque: rgba(255, 255, 255, 0.9);   /* Para texto sobre fondos oscuros */
-    --text-dark: #333;      /* Texto oscuro para legibilidad */
-    --text-light: #f8f9fa;  /* Texto claro */
-    --tech-blue-light: #00bfff; /* Azul claro tecnológico */
-    --tech-blue-dark: #0077c2;  /* Azul oscuro tecnológico */
-    --header-bg: linear-gradient(90deg, #0077c2, #00bfff); /* Gradiente para cabecera */
-    --row-bg-light: rgba(255, 255, 255, 0.1); /* Fondo de fila claro para glassmorphism */
-    --row-bg-dark: rgba(255, 255, 255, 0.05); /* Fondo de fila oscuro para glassmorphism */
+    --primary-blue: #6240a1; /* Actualizado al color de tu logo */
+    --dark-blue: #4a307a;
+    --white-transparent: rgba(255, 255, 255, 0.15);
+    --white-opaque: rgba(255, 255, 255, 0.9);
+    --text-dark: #333;
+    --text-light: #f8f9fa;
+    --tech-blue-light: #00bfff;
+    --tech-blue-dark: #0077c2;
+    --header-bg: linear-gradient(90deg, #0077c2, #00bfff);
+    --row-bg-light: rgba(255, 255, 255, 0.1);
+    --row-bg-dark: rgba(255, 255, 255, 0.05);
 }
 
 body.background-image {
@@ -20,9 +20,9 @@ body.background-image {
     background-size: cover;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     position: relative;
+    padding-top: 80px; /* Aquí agregué la regla para el espacio del header */
 }
 
 body.background-image::before {
@@ -36,6 +36,7 @@ body.background-image::before {
     z-index: -1;
 }
 
+/* --- Estilos de componentes (Card, Buttons, Forms) --- */
 .card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 1.5rem;
@@ -108,6 +109,7 @@ p, label, .form-check-label {
     color: var(--text-light);
 }
 
+/* --- Estilos para la tabla y pestañas --- */
 .nav-tabs {
     border-bottom: none;
     margin-bottom: 0;
@@ -165,9 +167,9 @@ p, label, .form-check-label {
     padding: 25px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-/* --- ESTILOS MEJORADOS PARA LA TABLA DE CARGOS (Detalles del cliente) --- */
+
 #charge-details {
-    background: rgba(255, 255, 255, 0.15); /* Fondo para la sección */
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(8px);
     border-radius: 1.5rem;
     padding: 20px;
@@ -179,9 +181,8 @@ p, label, .form-check-label {
     text-align: center;
 }
 
-/* Estilo general de la tabla */
 #charge-details .table {
-    --bs-table-bg: transparent; /* ¡Aquí está la solución para el fondo blanco! */
+    --bs-table-bg: transparent;
     color: var(--text-light);
     border-collapse: separate;
     border-spacing: 0 10px;
@@ -223,118 +224,16 @@ p, label, .form-check-label {
     text-align: center;
 }
 
-/* Evita que el texto de la columna de monto se rompa */
 #charge-details .table tbody tr td:last-child {
     white-space: nowrap;
 }
 
-/* Para la última fila y su redondez */
 #charge-details .table tbody tr:last-child {
     border-bottom-left-radius: 0.75rem;
     border-bottom-right-radius: 0.75rem;
 }
 
-/* --- Media Queries para hacerlo Responsive --- */
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
-
-    .card {
-        padding: 20px !important;
-        border-radius: 1rem;
-    }
-    
-    .input-group > .form-select, .input-group > .form-control, .input-group > .btn {
-        font-size: 0.9rem;
-    }
-
-    .nav-tabs .nav-link {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-        margin-right: 2px;
-        border-radius: 0.5rem 0.5rem 0 0;
-    }
-
-    .tab-content {
-        border-radius: 0 0 1rem 1rem;
-        padding: 15px;
-    }
-
-    /* La clase .table-responsive se encarga de esto automáticamente.
-    No es necesario agregar más reglas aquí. */
-    .table-responsive {
-        margin-top: 15px;
-    }
-
-    #charge-details .table th, #charge-details .table td {
-        padding: 10px 8px;
-    }
-
-    #charge-details .table tbody tr {
-        border-radius: 0.5rem;
-    }
-}
-/* --- Media Queries para hacerlo Responsive --- */
-@media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
-
-    .card {
-        padding: 20px !important;
-        border-radius: 1rem;
-    }
-    
-    .input-group > .form-select, .input-group > .form-control, .input-group > .btn {
-        font-size: 0.9rem;
-    }
-
-    .nav-tabs .nav-link {
-        padding: 8px 12px;
-        font-size: 0.9rem;
-        margin-right: 2px;
-        border-radius: 0.5rem 0.5rem 0 0;
-    }
-
-    .tab-content {
-        border-radius: 0 0 1rem 1rem;
-        padding: 15px;
-    }
-
-    .table-responsive {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        border-radius: 0.75rem;
-        margin-top: 15px;
-    }
-    .table {
-        min-width: 650px;
-        font-size: 0.9rem;
-    }
-
-    #charge-details .table th, #charge-details .table td {
-        padding: 10px 8px;
-    }
-
-    #charge-details .table tbody tr {
-        border-radius: 0.5rem;
-    }
-}
-
-#myTabContent {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: none;
-    border-radius: 0 0 1.5rem 1.5rem;
-    padding: 25px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-   
-}
-/* Para que el header se vea flotante y transparente */
+/* --- Estilos para el Header y Footer (Glassmorphism) --- */
 header {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
@@ -345,29 +244,13 @@ header {
     z-index: 1000;
 }
 
-/* Ajusta el margen superior del cuerpo para que no quede debajo del header */
-body.background-image {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: var(--text-light);
-    background: url('tecnologia-gpon.webp') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column; /* Esto es clave para que el header y footer se muestren bien */
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding-top: 80px; /* Asegura el espacio para el header */
-}
-
-/* Estilo para los enlaces de navegación */
 .nav-link {
-    color: var(--text-light); /* Enlaces de color claro para el header transparente */
+    color: var(--text-light) !important;
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--primary-blue);
+    color: var(--primary-blue) !important;
 }
 
 .dropdown-menu {
@@ -387,8 +270,23 @@ body.background-image {
     color: white;
 }
 
-/* Estilo para el footer */
-/* Estilo para el footer */
+/* Estilo para el botón de hamburguesa para que se vea en el fondo oscuro */
+.navbar-toggler {
+    border: none;
+    padding: 0;
+    filter: invert(1);
+}
+
+/* Estilo para el menú colapsado */
+.collapse.navbar-collapse {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
 footer {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
@@ -397,5 +295,88 @@ footer {
     text-align: center;
     padding: 2rem 0;
     width: 100%;
-    margin-top: auto; /* Esto lo empuja hacia abajo si el contenido no llena la página */
+    margin-top: auto;
+}
+
+/* --- Estilos para el Modal --- */
+.modal-backdrop.show {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.glassmorphism-modal {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 1.5rem;
+}
+
+.glassmorphism-modal .btn-close {
+    filter: invert(1);
+    opacity: 0.8;
+}
+
+.glassmorphism-modal .btn-close:hover {
+    opacity: 1;
+}
+
+.glassmorphism-modal .btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+.glassmorphism-modal .btn-primary:hover {
+    background-color: var(--dark-blue);
+    border-color: var(--dark-blue);
+}
+
+/* --- Media Queries para hacerlo Responsive (Optimizado) --- */
+@media (max-width: 991px) {
+    header {
+        position: relative; /* Evita que el header se superponga al contenido */
+    }
+
+    body {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .card {
+        padding: 20px !important;
+        border-radius: 1rem;
+    }
+
+    .input-group > .form-select, .input-group > .form-control, .input-group > .btn {
+        font-size: 0.9rem;
+    }
+
+    .nav-tabs .nav-link {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        margin-right: 2px;
+        border-radius: 0.5rem 0.5rem 0 0;
+    }
+
+    .tab-content {
+        border-radius: 0 0 1rem 1rem;
+        padding: 15px;
+    }
+
+    .table-responsive {
+        margin-top: 15px;
+    }
+
+    #charge-details .table th, #charge-details .table td {
+        padding: 10px 8px;
+    }
+
+    #charge-details .table tbody tr {
+        border-radius: 0.5rem;
+    }
 }

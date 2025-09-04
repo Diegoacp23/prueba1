@@ -11,7 +11,7 @@
 </head>
 <body class="background-image">
 
-    <header class="bg-white shadow-sm py-3 mb-5">
+    <header class="shadow-sm py-3">
     <div class="container d-flex justify-content-between align-items-center">
         <a href="#" class="d-flex align-items-center">
             <img src="images.jpeg" alt="Logo Norte" style="height: 40px;">
@@ -20,24 +20,24 @@
         
         <nav class="d-none d-lg-flex align-items-center">
             <ul class="nav">
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Inicio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Servicios</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Servicios</a></li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-primary" href="#" id="infoPagosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Info pagos</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="infoPagosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Info pagos</a>
                     <ul class="dropdown-menu" aria-labelledby="infoPagosDropdown">
                         <li><a class="dropdown-item" href="#">Bancos</a></li>
                         <li><a class="dropdown-item" href="#">Métodos de Pago</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-primary" href="#" id="nosotrosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="nosotrosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nosotros</a>
                     <ul class="dropdown-menu" aria-labelledby="nosotrosDropdown">
                         <li><a class="dropdown-item" href="#">Misión y Visión</a></li>
                         <li><a class="dropdown-item" href="#">Contacto</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">¡Entérate!</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Contáctanos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">¡Entérate!</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
             </ul>
             <button class="btn btn-primary ms-3 d-flex align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill me-2" viewBox="0 0 16 16">
@@ -53,146 +53,146 @@
 
         <div class="collapse navbar-collapse d-lg-none" id="navbarNav">
             <ul class="navbar-nav ms-auto text-center">
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Inicio</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Servicios</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Info pagos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Nosotros</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">¡Entérate!</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Contáctanos</a></li>
-                <li class="nav-item"><a href="#" class="nav-link text-primary">Cliente</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Servicios</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Info pagos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">¡Entérate!</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Contáctanos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Cliente</a></li>
             </ul>
         </div>
     </div>
 </header>
 
-    <main class="container py-5 d-flex justify-content-center">
-        <div class="card p-4 shadow-lg w-100" style="max-width: 900px;">
-            
-            <div id="initial-state" class="text-center">
-                <h1 class="mb-4">Portal de Pagos</h1>
-                <p>Haz clic para iniciar la consulta de tu estado de cuenta.</p>
-                <button id="show-form-btn" class="btn btn-primary btn-lg">Consultar Usuario</button>
+<main class="container py-5 d-flex justify-content-center">
+    <div class="card p-4 shadow-lg w-100" style="max-width: 900px;">
+        
+        <div id="initial-state" class="text-center">
+            <h1 class="mb-4">Portal de Pagos</h1>
+            <p>Haz clic para iniciar la consulta de tu estado de cuenta.</p>
+            <button id="show-form-btn" class="btn btn-primary btn-lg">Consultar Usuario</button>
+        </div>
+
+        <div id="content-container" class="hidden">
+            <h2 class="text-center mb-4">Consultar Estado de Cuenta</h2>
+            <div class="input-group mb-3">
+                <select class="form-select" id="document-type">
+                    <option value="V">V</option>
+                    <option value="E">E</option>
+                    <option value="J">J</option>
+                </select>
+                <input type="text" class="form-control" id="document-number" placeholder="Cédula o RIF" required>
+                <button class="btn btn-primary" id="consult-btn">Consultar</button>
             </div>
 
-            <div id="content-container" class="hidden">
-                <h2 class="text-center mb-4">Consultar Estado de Cuenta</h2>
-                <div class="input-group mb-3">
-                    <select class="form-select" id="document-type">
-                        <option value="V">V</option>
-                        <option value="E">E</option>
-                        <option value="J">J</option>
-                    </select>
-                    <input type="text" class="form-control" id="document-number" placeholder="Cédula o RIF" required>
-                    <button class="btn btn-primary" id="consult-btn">Consultar</button>
+            <div id="account-details" class="hidden mt-4">
+                <h3 class="mb-3">Cuentas Pendientes</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="contractCheckbox">
+                    <label class="form-check-label" for="contractCheckbox">
+                        Contrato <span id="contract-number"></span> - <span id="total-to-pay"></span>
+                    </label>
                 </div>
+            </div>
 
-                <div id="account-details" class="hidden mt-4">
-                    <h3 class="mb-3">Cuentas Pendientes</h3>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="contractCheckbox">
-                        <label class="form-check-label" for="contractCheckbox">
-                            Contrato <span id="contract-number"></span> - <span id="total-to-pay"></span>
-                        </label>
-                    </div>
-                </div>
+            <div id="payment-tabs" class="hidden mt-5">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="cargos-tab" data-bs-toggle="tab" data-bs-target="#cargos" type="button" role="tab" aria-controls="cargos" aria-selected="true">Cargos</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="transferencia-tab" data-bs-toggle="tab" data-bs-target="#transferencia" type="button" role="tab" aria-controls="transferencia" aria-selected="false">Registrar transferencia</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pagomovil-tab" data-bs-toggle="tab" data-bs-target="#pagomovil" type="button" role="tab" aria-controls="pagomovil" aria-selected="false">Registrar pago móvil</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="c2p-tab" data-bs-toggle="tab" data-bs-target="#c2p" type="button" role="tab" aria-controls="c2p" aria-selected="false">Realizar pago móvil C2P</button>
+                    </li>
+                </ul>
 
-                <div id="payment-tabs" class="hidden mt-5">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="cargos-tab" data-bs-toggle="tab" data-bs-target="#cargos" type="button" role="tab" aria-controls="cargos" aria-selected="true">Cargos</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="transferencia-tab" data-bs-toggle="tab" data-bs-target="#transferencia" type="button" role="tab" aria-controls="transferencia" aria-selected="false">Registrar transferencia</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="pagomovil-tab" data-bs-toggle="tab" data-bs-target="#pagomovil" type="button" role="tab" aria-controls="pagomovil" aria-selected="false">Registrar pago móvil</button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="c2p-tab" data-bs-toggle="tab" data-bs-target="#c2p" type="button" role="tab" aria-controls="c2p" aria-selected="false">Realizar pago móvil C2P</button>
-                        </li>
-                    </ul>
+                <div class="tab-content pt-3" id="myTabContent">
+                    
+                    <div class="tab-pane fade show active" id="cargos" role="tabpanel" aria-labelledby="cargos-tab">
+                        <div id="charge-details" class="hidden">
+                            <h4 class="mb-3">Detalles de cargos del cliente</h4>
 
-                    <div class="tab-content pt-3" id="myTabContent">
-                        
-                        <div class="tab-pane fade show active" id="cargos" role="tabpanel" aria-labelledby="cargos-tab">
-                            <div id="charge-details" class="hidden">
-                                <h4 class="mb-3">Detalles de cargos del cliente</h4>
-    
-                                <div class="table-responsive">
-                                    <table class="table table-bordered">
-                                        <thead class="bg-primary text-white">
-                                            <tr>
-                                                <th>Nro. Contrato</th>
-                                                <th>Estatus</th>
-                                                <th>Concepto</th>
-                                                <th>Cantidad</th>
-                                                <th>Monto</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="charge-details-table">
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th>Nro. Contrato</th>
+                                            <th>Estatus</th>
+                                            <th>Concepto</th>
+                                            <th>Cantidad</th>
+                                            <th>Monto</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="charge-details-table">
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="tab-pane fade" id="transferencia" role="tabpanel" aria-labelledby="transferencia-tab">
-                            <h4 class="mb-3">Registrar transferencia</h4>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-4"><label class="form-label">Cédula del depositante</label><input type="text" class="form-control" placeholder="Cédula del depositante"></div>
-                                    <div class="col-md-4"><label class="form-label">Fecha de transferencia</label><input type="date" class="form-control"></div>
-                                    <div class="col-md-4"><label class="form-label">Nro. de referencia</label><input type="text" class="form-control" placeholder="Nro. de referencia"></div>
-                                    <div class="col-md-6"><label class="form-label">Banco destino</label><select class="form-select" id="banco-destino-transferencia"></select></div>
-                                    <div class="col-md-6"><label class="form-label">Cuenta bancaria</label><select class="form-select" id="cuenta-bancaria"></select></div>
-                                    <div class="col-12"><label class="form-label">Monto</label><input type="text" class="form-control" placeholder="Monto"></div>
-                                </div>
-                                <div class="mt-4 text-end">
-                                    <button type="button" class="btn btn-success me-2">Validar</button>
-                                    <button type="button" class="btn btn-primary">Cargos</button>
-                                </div>
-                            </form>
-                        </div>
-                        
-                        <div class="tab-pane fade" id="pagomovil" role="tabpanel" aria-labelledby="pagomovil-tab">
-                            <h4 class="mb-3">Registrar pago móvil</h4>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6"><label class="form-label">Banco destino</label><select class="form-select" id="banco-destino-pagomovil"></select></div>
-                                    <div class="col-md-6"><label class="form-label">Banco de origen</label><select class="form-select" id="banco-origen-pagomovil"></select></div>
-                                    <div class="col-md-6"><label class="form-label">Nro. Teléfono del pago móvil (origen)</label><input type="text" class="form-control" placeholder="Nro. Teléfono del pago móvil (origen)"></div>
-                                    <div class="col-md-6"><label class="form-label">Monto</label><input type="text" class="form-control" placeholder="Monto"></div>
-                                    <div class="col-md-6"><label class="form-label">Nro. de referencia</label><input type="text" class="form-control" placeholder="Nro. de referencia"></div>
-                                    <div class="col-md-6"><label class="form-label">Fecha del pago móvil</label><input type="date" class="form-control"></div>
-                                </div>
-                                <div class="mt-4 text-end">
-                                    <button type="button" class="btn btn-success me-2">Registrar</button>
-                                    <button type="button" class="btn btn-primary">Cargos</button>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="tab-pane fade" id="transferencia" role="tabpanel" aria-labelledby="transferencia-tab">
+                        <h4 class="mb-3">Registrar transferencia</h4>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-4"><label class="form-label">Cédula del depositante</label><input type="text" class="form-control" placeholder="Cédula del depositante"></div>
+                                <div class="col-md-4"><label class="form-label">Fecha de transferencia</label><input type="date" class="form-control"></div>
+                                <div class="col-md-4"><label class="form-label">Nro. de referencia</label><input type="text" class="form-control" placeholder="Nro. de referencia"></div>
+                                <div class="col-md-6"><label class="form-label">Banco destino</label><select class="form-select" id="banco-destino-transferencia"></select></div>
+                                <div class="col-md-6"><label class="form-label">Cuenta bancaria</label><select class="form-select" id="cuenta-bancaria"></select></div>
+                                <div class="col-12"><label class="form-label">Monto</label><input type="text" class="form-control" placeholder="Monto"></div>
+                            </div>
+                            <div class="mt-4 text-end">
+                                <button type="button" class="btn btn-success me-2">Validar</button>
+                                <button type="button" class="btn btn-primary">Cargos</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="pagomovil" role="tabpanel" aria-labelledby="pagomovil-tab">
+                        <h4 class="mb-3">Registrar pago móvil</h4>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6"><label class="form-label">Banco destino</label><select class="form-select" id="banco-destino-pagomovil"></select></div>
+                                <div class="col-md-6"><label class="form-label">Banco de origen</label><select class="form-select" id="banco-origen-pagomovil"></select></div>
+                                <div class="col-md-6"><label class="form-label">Nro. Teléfono del pago móvil (origen)</label><input type="text" class="form-control" placeholder="Nro. Teléfono del pago móvil (origen)"></div>
+                                <div class="col-md-6"><label class="form-label">Monto</label><input type="text" class="form-control" placeholder="Monto"></div>
+                                <div class="col-md-6"><label class="form-label">Nro. de referencia</label><input type="text" class="form-control" placeholder="Nro. de referencia"></div>
+                                <div class="col-md-6"><label class="form-label">Fecha del pago móvil</label><input type="date" class="form-control"></div>
+                            </div>
+                            <div class="mt-4 text-end">
+                                <button type="button" class="btn btn-success me-2">Registrar</button>
+                                <button type="button" class="btn btn-primary">Cargos</button>
+                            </div>
+                        </form>
+                    </div>
 
-                        <div class="tab-pane fade" id="c2p" role="tabpanel" aria-labelledby="c2p-tab">
-                            <h4 class="mb-3">Realizar pago móvil C2P</h4>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6"><label class="form-label">Banco destino</label><select class="form-select" id="banco-destino-c2p"></select></div>
-                                    <div class="col-md-6"><label class="form-label">Cédula del titular</label><input type="text" class="form-control" placeholder="Cédula del titular"></div>
-                                    <div class="col-md-6"><label class="form-label">Monto</label><input type="text" class="form-control" placeholder="Monto"></div>
-                                    <div class="col-md-6"><label class="form-label">Clave dinámica</label><input type="password" class="form-control" placeholder="Clave dinámica"></div>
-                                    <div class="col-12"><label class="form-label">Concepto</label><input type="text" class="form-control" placeholder="Concepto"></div>
-                                </div>
-                                <div class="mt-4 text-end">
-                                    <button type="button" class="btn btn-success me-2">Pagar</button>
-                                    <button type="button" class="btn btn-primary">Cargos</button>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="tab-pane fade" id="c2p" role="tabpanel" aria-labelledby="c2p-tab">
+                        <h4 class="mb-3">Realizar pago móvil C2P</h4>
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-md-6"><label class="form-label">Banco destino</label><select class="form-select" id="banco-destino-c2p"></select></div>
+                                <div class="col-md-6"><label class="form-label">Cédula del titular</label><input type="text" class="form-control" placeholder="Cédula del titular"></div>
+                                <div class="col-md-6"><label class="form-label">Monto</label><input type="text" class="form-control" placeholder="Monto"></div>
+                                <div class="col-md-6"><label class="form-label">Clave dinámica</label><input type="password" class="form-control" placeholder="Clave dinámica"></div>
+                                <div class="col-12"><label class="form-label">Concepto</label><input type="text" class="form-control" placeholder="Concepto"></div>
+                            </div>
+                            <div class="mt-4 text-end">
+                                <button type="button" class="btn btn-success me-2">Pagar</button>
+                                <button type="button" class="btn btn-primary">Cargos</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </div>
+</main>
     <div class="modal fade" id="promotionModal" tabindex="-1" aria-labelledby="promotionModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content glassmorphism-modal">
