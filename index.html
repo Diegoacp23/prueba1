@@ -10,13 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body>
+<body class="background-image">
 
     <header class="navbar navbar-dark shadow-sm">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="#" class="d-flex align-items-center">
                 <img src="images.jpeg" alt="Logo Norte" style="height: 40px;">
-                <span class="fs-4 fw-bold ms-2" style="color: #f3f2f5;">TecniCable</span>
+                <span class="fs-4 fw-bold ms-2" style="color: #6240a1;">TecniCable</span>
             </a>
             
             <nav class="d-none d-lg-flex align-items-center">
@@ -208,7 +208,7 @@
                             <li>Fibra Óptica FTTH</li>
                             <li>Soporte 24/7</li>
                         </ul>
-                        <a href="#" class="btn btn-primary mt-3">Más información</a>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#contratarModal">Contratar</button>
                     </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@
                             <li>Fibra Óptica FTTH</li>
                             <li>Soporte prioritario</li>
                         </ul>
-                        <a href="#" class="btn btn-primary mt-3">Más información</a>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#contratarModal">Contratar</button>
                     </div>
                 </div>
             </div>
@@ -236,12 +236,51 @@
                             <li>Fibra Óptica FTTH</li>
                             <li>IP dedicada</li>
                         </ul>
-                        <a href="#" class="btn btn-primary mt-3">Más información</a>
+                        <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#contratarModal">Contratar</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="contratarModal" tabindex="-1" aria-labelledby="contratarModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glassmorphism-modal">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="contratarModalLabel">Contratar un Plan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellido" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="apellido" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" class="form-control" id="direccion" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="plan" class="form-label">Seleccione un Plan</label>
+                            <select class="form-select" id="plan" required>
+                                <option selected disabled value="">Seleccionar...</option>
+                                <option>Plan Básico (100 Mbps)</option>
+                                <option>Plan Avanzado (500 Mbps)</option>
+                                <option>Plan Premium (1 Gbps)</option>
+                            </select>
+                        </div>
+                        <div class="d-grid mt-4">
+                            <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <a href="https://wa.me/tunumerodetelefono" class="whatsapp-float" target="_blank">
         <i class="bi bi-whatsapp"></i>
