@@ -13,18 +13,28 @@
     --row-bg-dark: rgba(255, 255, 255, 0.05);
 }
 
-body {
+body.background-image {
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--text-light);
-    background-color: #2c3e50; /* Cambia este color por el que desees */
+    background: url('tecnologia-gpon.webp') no-repeat center center fixed;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-top: 0px;
+    padding-top: 80px; /* Agregamos un padding-top para compensar el header fijo */
 }
 
-
+body.background-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
 
 /* --- Estilos de componentes (Card, Buttons, Forms) --- */
 .card {
@@ -230,7 +240,7 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
-    top: 0; /* Esta propiedad asegura que se pegue al borde superior */
+    top: 0;
     z-index: 1000;
 }
 
@@ -262,10 +272,9 @@ header {
 
 /* Estilo para el botón de hamburguesa para que se vea en el fondo oscuro */
 .navbar-toggler {
-    
     border: none;
     padding: 0;
-    filter: invert(0);
+    filter: invert(1);
 }
 
 /* Estilo para el menú colapsado */
@@ -322,18 +331,99 @@ footer {
     border-color: var(--dark-blue);
 }
 
+/* --- Estilo del botón flotante de WhatsApp --- */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
+    color: white;
+}
+
+.whatsapp-float i {
+    color: white;
+    font-size: 32px;
+}
+
+/* --- Estilos de la sección "Planes" --- */
+#planes {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1.5rem;
+    padding: 40px 20px;
+    margin-top: 50px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.plan-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.plan-card .card-body {
+    padding: 2.5rem 1.5rem;
+}
+
+.plan-card .card-title {
+    font-weight: 700;
+    color: var(--tech-blue-light);
+    margin-bottom: 1rem;
+}
+
+.plan-card .card-text {
+    color: var(--text-light);
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.plan-card ul {
+    margin-top: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+.plan-card li {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
 /* --- Media Queries para hacerlo Responsive (Optimizado) --- */
 @media (max-width: 991px) {
-    /* No hay reglas especiales para el header aquí, ya que queremos que sea fijo */
     body {
-        padding-top: 80px; /* Mantener el padding en móviles */
+        padding-top: 80px;
     }
 }
 
 @media (max-width: 768px) {
     body {
         padding: 20px;
-        padding-top: 80px; /* Aseguramos que el padding superior sea constante */
+        padding-top: 80px;
     }
 
     .card {
@@ -367,5 +457,13 @@ footer {
 
     #charge-details .table tbody tr {
         border-radius: 0.5rem;
+    }
+    
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
     }
 }
