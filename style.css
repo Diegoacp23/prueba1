@@ -24,7 +24,7 @@ body.background-image {
     display: flex;
     flex-direction: column;
     position: relative;
-    padding-top: 80px; /* Agregamos un padding-top para compensar el header fijo */
+    padding-top: 0px; /* Agregamos un padding-top para compensar el header fijo */
 }
 
 body.background-image::before {
