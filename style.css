@@ -18,7 +18,7 @@ body{
 body.background-image {
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--text-light);
-    background: url('fondo0.jpg') no-repeat center center fixed;
+    background: url('fondo.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
